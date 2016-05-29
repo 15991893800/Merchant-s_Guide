@@ -4,11 +4,15 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class MerchantMainTest {
+import com.yk.marchant.main.InputParse;
 
+public class InputParseTest {
+
+    //Test new Single InputParse class
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testNewInputParse() {
+		InputParse inputParse = InputParse.getInstance();
+		assertEquals(inputParse.getClass(),InputParse.class);
 	}
 
 }
