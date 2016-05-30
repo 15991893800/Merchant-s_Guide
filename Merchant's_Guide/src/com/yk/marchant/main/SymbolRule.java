@@ -2,6 +2,8 @@ package com.yk.marchant.main;
 
 import java.util.List;
 
+import com.yk.marchant.util.SymbolUtil;
+
 public class SymbolRule {
 
 	// Check symbol rule
@@ -20,7 +22,37 @@ public class SymbolRule {
 		if (symbolList.size() == 1) {
 			return true;
 		} else {
-			return false;
+			for (int i = 0; i < symbolList.size() - 1; i++) {
+				int countNumber = 0;
+				for (int j = i + 1; j < symbolList.size(); j++) {
+					if (SymbolUtil.getSymbolValue(symbolList.get(i)) < SymbolUtil
+							.getSymbolValue(symbolList.get(j))) {
+						countNumber++;
+						if (countNumber == 2) {
+							return false;
+						} else if ((symbolList.get(i).equals("V")
+								|| symbolList.get(i).equals("L") || symbolList
+								.get(i).equals("D"))) {
+							return false;
+						} else if (symbolList.get(i).equals("I")
+								&& (!(symbolList.get(i + 1).equals("V") || symbolList
+										.get(i + 1).equals("X")))) {
+							return false;
+						}else if (symbolList.get(i).equals("X")
+								&& (!(symbolList.get(i + 1).equals("L") || symbolList
+										.get(i + 1).equals("C")))) {
+							return false;
+						}else if (symbolList.get(i).equals("C")
+								&& (!(symbolList.get(i + 1).equals("D") || symbolList
+										.get(i + 1).equals("M")))) {
+							return false;
+						}
+					}
+
+				}
+			}
+
+			return true;
 		}
 
 	}
@@ -30,8 +62,8 @@ public class SymbolRule {
 		// TODO Auto-generated method stub
 		if (symbolList.size() == 1) {
 			return true;
-		}else {
-			return false;
+		} else {
+			return true;
 		}
 	}
 
