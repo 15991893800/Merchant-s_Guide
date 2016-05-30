@@ -27,6 +27,12 @@ public class ContentParseTest {
 				.getCurrentOutput("how much wood could a woodchuck chuck if a woodchuck could chuck wood ?");
 		assertEquals("I have no idea what you are talking about",
 				currentResultWrong);
+
+		String currentResultTest01 = contentParse.getCurrentOutput("glob is I");
+		assertNull(currentResultTest01);
+		
+		String currentResultTest02 = contentParse.getCurrentOutput("glob glob Silver is 34 Credits");
+		assertNull(currentResultTest02);
 	}
 
 }
