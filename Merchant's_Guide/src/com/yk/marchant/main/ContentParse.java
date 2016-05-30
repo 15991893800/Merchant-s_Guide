@@ -24,6 +24,7 @@ public class ContentParse {
 		}
 	}
 
+	// Return output statement
 	private String parseQuestion(String currentLine) {
 		// TODO Auto-generated method stub
 		String[] currentLineSplits = currentLine.split(ContentUtil.IS_UTIL);
@@ -34,8 +35,10 @@ public class ContentParse {
 
 		if ((currentLine.startsWith(ContentUtil.HOW_MANY_UTIL) || currentLine
 				.startsWith(ContentUtil.HOW_MUCH_UTIL))) {
+
 			if (currentLine.startsWith(ContentUtil.HOW_MUCH_UTIL)
-					&& currentLineSplitsLeftList.length == 2) {
+					&& currentLineSplitsLeftList.length == 2) { 
+				// When start with how much
 				List<String> symbolList = new ArrayList<String>();
 				for (int i = 0; i < currentLineSplitsRightList.length - 1; i++) {
 					symbolList.add(symbolValue
@@ -53,10 +56,11 @@ public class ContentParse {
 					return symbolList + ContentUtil.Rule_Util;
 				}
 
-			} else if (currentLine.startsWith(ContentUtil.HOW_MANY_UTIL)
+			} else if (currentLine.startsWith(ContentUtil.HOW_MANY_UTIL) 
 					&& currentLineSplitsLeftList.length == 3
 					&& currentLineSplitsLeftList[2]
 							.equals(ContentUtil.CREDITS_UTIL)) {
+				//When start with how many
 				List<String> symbolList = new ArrayList<String>();
 				for (int i = 0; i < currentLineSplitsRightList.length - 2; i++) {
 					symbolList.add(symbolValue
