@@ -60,6 +60,7 @@ public class ContentParse {
 				}
 				//Check the symbol rule
 				if(SymbolRule.checkSymbolRule(symbolList)){
+					int productNumber = SymbolRule.getProductNumber(symbolList);
 					return null;
 				}else{
 				   return symbolList + ContentUtil.Rule_Util;	

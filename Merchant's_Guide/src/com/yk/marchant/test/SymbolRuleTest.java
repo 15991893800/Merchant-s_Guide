@@ -51,5 +51,19 @@ public class SymbolRuleTest {
 		assertTrue(SymbolRule.checkSymbolRule(symbolList05));
 		
 	}
+	
+	@Test
+	public void testGetProductNumber(){
+		List<String> symbolList01 = new ArrayList<String>();
+		symbolList01.add("M");
+		symbolList01.add("C");
+		symbolList01.add("M");
+		symbolList01.add("X");
+		symbolList01.add("L");
+		symbolList01.add("I");
+		symbolList01.add("V");
+		
+		assertEquals(1944, SymbolRule.getProductNumber(symbolList01));
+	}
 
 }

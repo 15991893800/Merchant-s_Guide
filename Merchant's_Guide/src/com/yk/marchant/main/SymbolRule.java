@@ -83,4 +83,21 @@ public class SymbolRule {
 		}
 	}
 
+	//Get product number method
+	public static int getProductNumber(List<String> symbolList) {
+		// TODO Auto-generated method stub
+		int productNumber = 0;
+		for(int i=0; i<symbolList.size(); i++){
+			if(SymbolUtil.getSymbolValue(symbolList.get(i)) < SymbolUtil
+					.getSymbolValue(symbolList.get(i+1))){
+				productNumber = productNumber +(SymbolUtil
+						.getSymbolValue(symbolList.get(i+1))-SymbolUtil.getSymbolValue(symbolList.get(i)));
+				i++;
+			}else{
+				productNumber = productNumber + SymbolUtil.getSymbolValue(symbolList.get(i));
+			}
+		}
+		return productNumber;
+	}
+
 }
