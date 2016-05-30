@@ -58,7 +58,12 @@ public class ContentParse {
 				for(int i=0; i<currentLineSplitsLeftList.length-1; i++){
 					symbolList.add(symbolValue.getSymbolTemp(currentLineSplitsLeftList[i]));
 				}
-				return null;
+				//Check the symbol rule
+				if(SymbolRule.checkSymbolRule(symbolList)){
+					return null;
+				}else{
+				   return symbolList + ContentUtil.Rule_Util;	
+				}
 			} else {
 				return ContentUtil.Wrong_Util;
 			}
