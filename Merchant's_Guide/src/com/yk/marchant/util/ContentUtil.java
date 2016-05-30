@@ -14,4 +14,6 @@ public class ContentUtil {
 	public static final String HOW_MUCH_UTIL = "how much";
 
 	public static final String CREDITS_UTIL = "Credits";
+	
+	public static final String Wrong_Util = "I have no idea what you are talking about";
 }

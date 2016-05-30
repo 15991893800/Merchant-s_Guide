@@ -1,6 +1,6 @@
 package com.yk.marchant.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -13,26 +13,34 @@ public class SymbolUtilTest {
 	 ***/
 	@Test
 	public void testGetSymmolValue() {
-		int symbolI = SymbolUtil.getSymmolValue("I");
+		int symbolI = SymbolUtil.getSymbolValue("I");
 		assertEquals(symbolI, 1);
 		
-		int symbolV = SymbolUtil.getSymmolValue("V");
+		int symbolV = SymbolUtil.getSymbolValue("V");
 		assertEquals(symbolV, 5);
 		
-		int symbolX = SymbolUtil.getSymmolValue("X");
+		int symbolX = SymbolUtil.getSymbolValue("X");
 		assertEquals(symbolX, 10);
 		
-		int symbolL = SymbolUtil.getSymmolValue("L");
+		int symbolL = SymbolUtil.getSymbolValue("L");
 		assertEquals(symbolL, 50);
 		
-		int symbolC = SymbolUtil.getSymmolValue("C");
+		int symbolC = SymbolUtil.getSymbolValue("C");
 		assertEquals(symbolC, 100);
 		
-		int symbolD = SymbolUtil.getSymmolValue("D");
+		int symbolD = SymbolUtil.getSymbolValue("D");
 		assertEquals(symbolD, 500);
 		
-		int symbolM = SymbolUtil.getSymmolValue("M");
+		int symbolM = SymbolUtil.getSymbolValue("M");
 		assertEquals(symbolM, 1000);
+		
+	}
+	
+	//Get the symbol keys
+	@Test
+	public void testGetSymbolKeys(){
+		String symbolKeys = SymbolUtil.getSymbolKeys();
+		assertEquals("DVCLMXI", symbolKeys);
 	}
 
 }
