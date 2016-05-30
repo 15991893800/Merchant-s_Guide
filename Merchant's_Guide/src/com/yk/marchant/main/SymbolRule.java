@@ -63,7 +63,23 @@ public class SymbolRule {
 		if (symbolList.size() == 1) {
 			return true;
 		} else {
-			return true;
+			for(int i=0; i<symbolList.size()-1; i++){
+				int countNumber = 0;
+				for(int j=i+1; j<symbolList.size(); j++){
+					if(symbolList.get(i).equals(symbolList.get(j))){
+						countNumber++;
+						if((symbolList.get(i).equals("V")
+								|| symbolList.get(i).equals("L") || symbolList
+								.get(i).equals("D"))){
+							return false;
+						}else if(countNumber == 3 && (symbolList.get(j).equals(symbolList.get(j-1)))){
+							return false;
+						}
+					}
+				}
+			}
+				
+		    return true;
 		}
 	}
 

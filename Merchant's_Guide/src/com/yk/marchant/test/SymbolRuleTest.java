@@ -31,6 +31,25 @@ public class SymbolRuleTest {
 		symbolList03.add("I");
 		symbolList03.add("V");
 		assertTrue(SymbolRule.checkSymbolRule(symbolList03));
+		
+		List<String> symbolList04 = new ArrayList<String>();
+		symbolList04.add("M");
+		symbolList04.add("C");
+		symbolList04.add("M");
+		symbolList04.add("M");
+		symbolList04.add("L");
+		symbolList04.add("I");
+		symbolList04.add("V");
+		assertFalse(SymbolRule.checkSymbolRule(symbolList04));
+		
+		List<String> symbolList05 = new ArrayList<String>();
+		symbolList05.add("X");
+		symbolList05.add("X");
+		symbolList05.add("X");
+		symbolList05.add("I");
+		symbolList05.add("X");
+		assertTrue(SymbolRule.checkSymbolRule(symbolList05));
+		
 	}
 
 }
