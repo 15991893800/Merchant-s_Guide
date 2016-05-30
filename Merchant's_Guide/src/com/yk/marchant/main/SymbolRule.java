@@ -88,7 +88,7 @@ public class SymbolRule {
 		// TODO Auto-generated method stub
 		int productNumber = 0;
 		for(int i=0; i<symbolList.size(); i++){
-			if(SymbolUtil.getSymbolValue(symbolList.get(i)) < SymbolUtil
+			if(i<symbolList.size()-1 && SymbolUtil.getSymbolValue(symbolList.get(i)) < SymbolUtil
 					.getSymbolValue(symbolList.get(i+1))){
 				productNumber = productNumber +(SymbolUtil
 						.getSymbolValue(symbolList.get(i+1))-SymbolUtil.getSymbolValue(symbolList.get(i)));

@@ -26,7 +26,60 @@ public class ContentParse {
 
 	private String parseQuestion(String currentLine) {
 		// TODO Auto-generated method stub
-		return null;
+		String[] currentLineSplits = currentLine.split(ContentUtil.IS_UTIL);
+		String[] currentLineSplitsLeftList = currentLineSplits[0]
+				.split(ContentUtil.SPACE_UTIL);
+		String[] currentLineSplitsRightList = currentLineSplits[1]
+				.split(ContentUtil.SPACE_UTIL);
+
+		if ((currentLine.startsWith(ContentUtil.HOW_MANY_UTIL) || currentLine
+				.startsWith(ContentUtil.HOW_MUCH_UTIL))) {
+			if (currentLine.startsWith(ContentUtil.HOW_MUCH_UTIL)
+					&& currentLineSplitsLeftList.length == 2) {
+				List<String> symbolList = new ArrayList<String>();
+				for (int i = 0; i < currentLineSplitsRightList.length - 1; i++) {
+					symbolList.add(symbolValue
+							.getSymbolTemp(currentLineSplitsRightList[i]));
+				}
+				if (SymbolRule.checkSymbolRule(symbolList)) {
+					int productNumber = SymbolRule.getProductNumber(symbolList);
+					String returnString = currentLine.substring(
+							currentLine.indexOf(ContentUtil.IS_UTIL)
+									+ ContentUtil.IS_UTIL.length(),
+							currentLine.length() - 2)
+							+ ContentUtil.IS_UTIL + productNumber;
+					return returnString;
+				} else {
+					return symbolList + ContentUtil.Rule_Util;
+				}
+
+			} else if (currentLine.startsWith(ContentUtil.HOW_MANY_UTIL)
+					&& currentLineSplitsLeftList.length == 3
+					&& currentLineSplitsLeftList[2]
+							.equals(ContentUtil.CREDITS_UTIL)) {
+				List<String> symbolList = new ArrayList<String>();
+				for (int i = 0; i < currentLineSplitsRightList.length - 2; i++) {
+					symbolList.add(symbolValue
+							.getSymbolTemp(currentLineSplitsRightList[i]));
+				}
+
+				if (SymbolRule.checkSymbolRule(symbolList)) {
+					int productNumber = SymbolRule.getProductNumber(symbolList);
+					double sumPrice = productNumber
+							* Double.parseDouble(productValue
+									.getSymbolTemp(currentLineSplitsRightList[currentLineSplitsRightList.length - 2]));
+					String returnString = currentLine.substring(
+							currentLine.indexOf(ContentUtil.IS_UTIL)
+							+ ContentUtil.IS_UTIL.length(),
+					currentLine.length() - 2) + ContentUtil.IS_UTIL + sumPrice +" "+ContentUtil.CREDITS_UTIL;
+					return returnString;
+				} else {
+					return symbolList + ContentUtil.Rule_Util;
+				}
+
+			}
+		}
+		return ContentUtil.Wrong_Util;
 	}
 
 	private String parseStatement(String currentLine) {
@@ -38,12 +91,12 @@ public class ContentParse {
 				.split(ContentUtil.SPACE_UTIL);
 
 		// check the input style of "glob is I", save in the Map("glob", 1)
-		if (currentLineSplitsLeftList.length == 1
+		if (currentLineSplitsLeftList.length == 1 // don't work
 				&& currentLineSplitsRightList.length == 1) {
 			if (SymbolUtil.getSymbolKeys().contains(
 					currentLineSplitsRightList[0])) {
 				symbolValue.setSymbolTemp(currentLineSplitsLeftList[0],
-					currentLineSplitsRightList[0]);
+						currentLineSplitsRightList[0]);
 				return null;
 			} else {
 				return ContentUtil.Wrong_Util;
@@ -55,15 +108,23 @@ public class ContentParse {
 							.equals(ContentUtil.CREDITS_UTIL)
 					&& new Integer(currentLineSplitsRightList[0]) instanceof Integer) {
 				List<String> symbolList = new ArrayList<String>();
-				for(int i=0; i<currentLineSplitsLeftList.length-1; i++){
-					symbolList.add(symbolValue.getSymbolTemp(currentLineSplitsLeftList[i]));
+				for (int i = 0; i < currentLineSplitsLeftList.length - 1; i++) {
+					symbolList.add(symbolValue
+							.getSymbolTemp(currentLineSplitsLeftList[i]));
 				}
-				//Check the symbol rule
-				if(SymbolRule.checkSymbolRule(symbolList)){
+				// Check the symbol rule
+				if (SymbolRule.checkSymbolRule(symbolList)) {
 					int productNumber = SymbolRule.getProductNumber(symbolList);
+					double productPrice = Double
+							.parseDouble(currentLineSplitsRightList[0])
+							/ productNumber;
+					productValue
+							.setSymbolTemp(
+									currentLineSplitsLeftList[currentLineSplitsLeftList.length - 1],
+									String.valueOf(productPrice));
 					return null;
-				}else{
-				   return symbolList + ContentUtil.Rule_Util;	
+				} else {
+					return symbolList + ContentUtil.Rule_Util;
 				}
 			} else {
 				return ContentUtil.Wrong_Util;
