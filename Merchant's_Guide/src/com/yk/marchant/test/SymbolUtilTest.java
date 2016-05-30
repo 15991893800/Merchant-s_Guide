@@ -41,6 +41,7 @@ public class SymbolUtilTest {
 	public void testGetSymbolKeys(){
 		String symbolKeys = SymbolUtil.getSymbolKeys();
 		assertEquals("DVCLMXI", symbolKeys);
+	
 	}
 
 }

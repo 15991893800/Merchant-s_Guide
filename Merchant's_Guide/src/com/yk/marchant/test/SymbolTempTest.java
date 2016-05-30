@@ -22,9 +22,9 @@ public class SymbolTempTest {
 
 	@Test
 	public void testGetSymbolTemp() {
-		symbolTemp.setSymbolTemp("glob", "I");
-		String valueTemp = symbolTemp.getSymbolTemp("glob");
-		assertEquals("I", valueTemp);
+		symbolTemp.setSymbolTemp("glob", 1);
+		int valueTemp = symbolTemp.getSymbolTemp("glob");
+		assertEquals(1, valueTemp);
 	}
 
 }

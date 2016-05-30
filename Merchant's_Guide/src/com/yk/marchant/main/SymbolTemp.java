@@ -6,7 +6,7 @@ import java.util.Map;
 public class SymbolTemp {
 	// Save the temp symbol and value from glob is I and so on
 
-	public static Map<String, String> symbolTemp;
+	public static Map<String, Integer> symbolTemp;
 	private static SymbolTemp instance = null;
 
 	public static SymbolTemp getInstance() {
@@ -21,14 +21,14 @@ public class SymbolTemp {
 	}
 
 	private SymbolTemp() {
-		symbolTemp = new HashMap<String, String>();
+		symbolTemp = new HashMap<String, Integer>();
 	}
 
-	public void setSymbolTemp(String symbol, String value) {
+	public void setSymbolTemp(String symbol, Integer value) {
 		symbolTemp.put(symbol, value);
 	}
 
-	public String getSymbolTemp(String symbol) {
+	public int getSymbolTemp(String symbol) {
 		return symbolTemp.get(symbol);
 	}
 }
