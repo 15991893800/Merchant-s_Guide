@@ -7,20 +7,8 @@ public class SymbolTemp {
 	// Save the temp symbol and value from glob is I and so on
 
 	public static Map<String, Integer> symbolTemp;
-	private static SymbolTemp instance = null;
 
-	public static SymbolTemp getInstance() {
-		if (instance == null) {
-			synchronized (InputFile.class) {
-				if (instance == null) {
-					instance = new SymbolTemp();
-				}
-			}
-		}
-		return instance;
-	}
-
-	private SymbolTemp() {
+	public SymbolTemp() {
 		symbolTemp = new HashMap<String, Integer>();
 	}
 

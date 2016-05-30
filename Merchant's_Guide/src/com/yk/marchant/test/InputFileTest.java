@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.junit.Test;
@@ -14,7 +15,7 @@ public class InputFileTest {
 
     //Test new Single InputParse class
 	@Test
-	public void testNewInputParse() {
+	public void testNewInputParse() throws FileNotFoundException, IOException {
 		InputFile inputFile = InputFile.getInstance();
 		assertEquals(inputFile.getClass(),InputFile.class);
 	}

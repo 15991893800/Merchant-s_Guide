@@ -17,7 +17,9 @@ public class OutputFile {
 		String currentLine;
 		while ((currentLine = br.readLine()) != null) {
 			String currentOutput = contentParse.getCurrentOutput(currentLine);
-			outputList.add(currentOutput);
+			if(currentOutput != null){
+				outputList.add(currentOutput);
+			}
 		}
 
 	}

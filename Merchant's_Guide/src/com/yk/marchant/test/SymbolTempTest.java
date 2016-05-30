@@ -13,7 +13,7 @@ public class SymbolTempTest {
 	private static SymbolTemp symbolTemp;
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		symbolTemp = SymbolTemp.getInstance();
+		symbolTemp = new SymbolTemp();
 	}
 
 	@AfterClass
