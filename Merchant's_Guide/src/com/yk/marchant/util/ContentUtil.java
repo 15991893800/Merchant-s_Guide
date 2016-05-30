@@ -16,4 +16,6 @@ public class ContentUtil {
 	public static final String CREDITS_UTIL = "Credits";
 	
 	public static final String Wrong_Util = "I have no idea what you are talking about";
+	
+	public static final String Rule_Util = "Do not conform to the symbol rule"; 
 }

@@ -44,7 +44,6 @@ public class ContentParseTest {
 		String currentResultNormalTest02 = contentParse.getCurrentOutput("glob glob Silver is 34 Credits");
 		assertNull(currentResultNormalTest02);
 		
-		
 	}
 
 }

@@ -1,5 +1,8 @@
 package com.yk.marchant.main;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.yk.marchant.util.ContentUtil;
 import com.yk.marchant.util.SymbolUtil;
 
@@ -40,15 +43,25 @@ public class ContentParse {
 			if (SymbolUtil.getSymbolKeys().contains(
 					currentLineSplitsRightList[0])) {
 				symbolValue.setSymbolTemp(currentLineSplitsLeftList[0],
-						SymbolUtil
-								.getSymbolValue(currentLineSplitsRightList[0]));
-				System.out.println(symbolValue.getSymbolTemp(currentLineSplitsLeftList[0]));
+					currentLineSplitsRightList[0]);
 				return null;
 			} else {
-				return null;
+				return ContentUtil.Wrong_Util;
 			}
-		} else {
-			return null;
+		} else { // Check the input style of "glob glob Silver is 34 Credits",
+					// save in the Map("Silver", 17)
+			if (currentLineSplitsRightList.length == 2
+					&& currentLineSplitsRightList[1]
+							.equals(ContentUtil.CREDITS_UTIL)
+					&& new Integer(currentLineSplitsRightList[0]) instanceof Integer) {
+				List<String> symbolList = new ArrayList<String>();
+				for(int i=0; i<currentLineSplitsLeftList.length-1; i++){
+					symbolList.add(symbolValue.getSymbolTemp(currentLineSplitsLeftList[i]));
+				}
+				return null;
+			} else {
+				return ContentUtil.Wrong_Util;
+			}
 		}
 
 	}
