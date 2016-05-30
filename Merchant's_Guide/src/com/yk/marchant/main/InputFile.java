@@ -5,21 +5,21 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class InputParse {
+public class InputFile {
 	
 	// new single InputParse class
-	private static InputParse instance=null;
-    public static InputParse getInstance(){
+	private static InputFile instance=null;
+    public static InputFile getInstance(){
         if(instance==null){
-            synchronized(InputParse.class){
+            synchronized(InputFile.class){
                 if(instance==null){
-                    instance=new InputParse();
+                    instance=new InputFile();
                 }
             }
         }
         return instance;
     }
-    private InputParse(){}
+    private InputFile(){}
     
     // get the input file
 	public BufferedReader getInput() throws FileNotFoundException {
@@ -31,7 +31,7 @@ public class InputParse {
     public void parseInputFile() throws IOException{
     	BufferedReader br = getInput();
     	String currentLine;
-    	OutputParse outputParse = new OutputParse();
+    	OutputFile outputParse = new OutputFile();
     	while((currentLine = br.readLine()) != null){
     		outputParse.parseCurrentLine(currentLine);
     	}
