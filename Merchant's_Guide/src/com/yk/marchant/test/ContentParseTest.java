@@ -34,6 +34,10 @@ public class ContentParseTest {
 		assertEquals("I have no idea what you are talking about",
 				currentResultWrongTest02);
 		
+		String currentResultWrongTest03 = contentParse.getCurrentOutput("glob glob Silver is ");
+		assertEquals("I have no idea what you are talking about",
+				currentResultWrongTest03);
+		
 		String currentResultNormalTest01 = contentParse.getCurrentOutput("glob is I");
 		assertNull(currentResultNormalTest01);
 		
