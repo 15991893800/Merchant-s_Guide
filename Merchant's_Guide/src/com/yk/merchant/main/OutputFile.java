@@ -1,4 +1,4 @@
-package com.yk.marchant.main;
+package com.yk.merchant.main;
 
 import java.io.BufferedReader;
 import java.io.IOException;

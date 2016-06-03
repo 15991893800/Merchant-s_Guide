@@ -1,10 +1,10 @@
-package com.yk.marchant.main;
+package com.yk.merchant.main;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.yk.marchant.util.ContentUtil;
-import com.yk.marchant.util.SymbolUtil;
+import com.yk.merchant.util.ContentUtil;
+import com.yk.merchant.util.SymbolUtil;
 
 public class ContentParse {
 
@@ -20,7 +20,7 @@ public class ContentParse {
 				return parseStatement(currentLine);
 			}
 		} else {
-			return ContentUtil.Wrong_Util;
+			return ContentUtil.WRONG_UTIL;
 		}
 	}
 
@@ -53,7 +53,7 @@ public class ContentParse {
 							+ ContentUtil.IS_UTIL + productNumber;
 					return returnString;
 				} else {
-					return symbolList + ContentUtil.Rule_Util;
+					return symbolList + ContentUtil.WRONG_UTIL;
 				}
 
 			} else if (currentLine.startsWith(ContentUtil.HOW_MANY_UTIL) 
@@ -78,12 +78,12 @@ public class ContentParse {
 					currentLine.length() - 2) + ContentUtil.IS_UTIL + sumPrice +" "+ContentUtil.CREDITS_UTIL;
 					return returnString;
 				} else {
-					return symbolList + ContentUtil.Rule_Util;
+					return symbolList + ContentUtil.RULE_UTIL;
 				}
 
 			}
 		}
-		return ContentUtil.Wrong_Util;
+		return ContentUtil.WRONG_UTIL;
 	}
 
 	private String parseStatement(String currentLine) {
@@ -103,7 +103,7 @@ public class ContentParse {
 						currentLineSplitsRightList[0]);
 				return null;
 			} else {
-				return ContentUtil.Wrong_Util;
+				return ContentUtil.WRONG_UTIL;
 			}
 		} else { // Check the input style of "glob glob Silver is 34 Credits",
 					// save in the Map("Silver", 17)
@@ -128,10 +128,10 @@ public class ContentParse {
 									String.valueOf(productPrice));
 					return null;
 				} else {
-					return symbolList + ContentUtil.Rule_Util;
+					return symbolList + ContentUtil.RULE_UTIL;
 				}
 			} else {
-				return ContentUtil.Wrong_Util;
+				return ContentUtil.WRONG_UTIL;
 			}
 		}
 

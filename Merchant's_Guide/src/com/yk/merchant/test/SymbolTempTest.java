@@ -1,4 +1,4 @@
-package com.yk.marchant.test;
+package com.yk.merchant.test;
 
 import static org.junit.Assert.*;
 
@@ -6,7 +6,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.yk.marchant.main.SymbolTemp;
+import com.yk.merchant.main.SymbolTemp;
 
 public class SymbolTempTest {
 

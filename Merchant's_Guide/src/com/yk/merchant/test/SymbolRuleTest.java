@@ -1,4 +1,4 @@
-package com.yk.marchant.test;
+package com.yk.merchant.test;
 
 import static org.junit.Assert.*;
 
@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.yk.marchant.main.SymbolRule;
+import com.yk.merchant.main.SymbolRule;
 
 public class SymbolRuleTest {
 

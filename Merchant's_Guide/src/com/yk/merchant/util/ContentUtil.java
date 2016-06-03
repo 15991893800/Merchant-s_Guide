@@ -1,4 +1,4 @@
-package com.yk.marchant.util;
+package com.yk.merchant.util;
 
 // Define content split util
 public class ContentUtil {
@@ -15,7 +15,7 @@ public class ContentUtil {
 
 	public static final String CREDITS_UTIL = "Credits";
 	
-	public static final String Wrong_Util = "I have no idea what you are talking about";
+	public static final String WRONG_UTIL = "I have no idea what you are talking about";
 	
-	public static final String Rule_Util = "Do not conform to the symbol rule"; 
+	public static final String RULE_UTIL = "Do not conform to the symbol rule"; 
 }

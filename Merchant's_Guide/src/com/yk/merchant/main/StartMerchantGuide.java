@@ -1,4 +1,4 @@
-package com.yk.marchant.main;
+package com.yk.merchant.main;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

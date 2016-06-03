@@ -1,10 +1,10 @@
-package com.yk.marchant.test;
+package com.yk.merchant.test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.yk.marchant.util.ContentUtil;
+import com.yk.merchant.util.ContentUtil;
 
 public class ContentUtilTest {
 

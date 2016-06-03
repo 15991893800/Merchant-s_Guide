@@ -1,4 +1,4 @@
-package com.yk.marchant.util;
+package com.yk.merchant.util;
 
 import java.util.HashMap;
 import java.util.Iterator;

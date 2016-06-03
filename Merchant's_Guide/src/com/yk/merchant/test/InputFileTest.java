@@ -1,4 +1,4 @@
-package com.yk.marchant.test;
+package com.yk.merchant.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -9,7 +9,7 @@ import java.io.IOException;
 
 import org.junit.Test;
 
-import com.yk.marchant.main.InputFile;
+import com.yk.merchant.main.InputFile;
 
 public class InputFileTest {
 

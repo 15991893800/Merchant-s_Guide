@@ -1,10 +1,10 @@
-package com.yk.marchant.test;
+package com.yk.merchant.test;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.yk.marchant.util.SymbolUtil;
+import com.yk.merchant.util.SymbolUtil;
 
 public class SymbolUtilTest {
 

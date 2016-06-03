@@ -1,8 +1,8 @@
-package com.yk.marchant.main;
+package com.yk.merchant.main;
 
 import java.util.List;
 
-import com.yk.marchant.util.SymbolUtil;
+import com.yk.merchant.util.SymbolUtil;
 
 public class SymbolRule {
 
