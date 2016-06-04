@@ -26,7 +26,7 @@ public class ContentParse {
 
 	// Return output statement
 	private String parseQuestion(String currentLine) {
-		// TODO Auto-generated method stub
+		
 		String[] currentLineSplits = currentLine.split(ContentUtil.IS_UTIL);
 		String[] currentLineSplitsLeftList = currentLineSplits[0]
 				.split(ContentUtil.SPACE_UTIL);
@@ -87,7 +87,7 @@ public class ContentParse {
 	}
 
 	private String parseStatement(String currentLine) {
-		// TODO Auto-generated method stub
+	
 		String[] currentLineSplits = currentLine.split(ContentUtil.IS_UTIL);
 		String[] currentLineSplitsLeftList = currentLineSplits[0]
 				.split(ContentUtil.SPACE_UTIL);

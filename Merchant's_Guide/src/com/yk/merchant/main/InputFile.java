@@ -45,7 +45,7 @@ public class InputFile {
 	// how much wood could a woodchuck chuck if a woodchuck could chuck wood ?
 	
 	public BufferedReader getInput() throws FileNotFoundException {
-		// TODO Auto-generated method stub
+		
 		return new BufferedReader(new FileReader("D:\\SampleInput.txt"));
 	}
 

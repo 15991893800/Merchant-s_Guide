@@ -8,7 +8,7 @@ public class SymbolRule {
 
 	// Check symbol rule
 	public static boolean checkSymbolRule(List<String> symbolList) {
-		// TODO Auto-generated method stub
+		
 		if (repeateRule(symbolList) && subtractRule(symbolList)) {
 			return true;
 		} else {
@@ -18,7 +18,7 @@ public class SymbolRule {
 
 	// Check subtract rule
 	private static boolean subtractRule(List<String> symbolList) {
-		// TODO Auto-generated method stub
+		
 		if (symbolList.size() == 1) {
 			return true;
 		} else {
@@ -59,7 +59,7 @@ public class SymbolRule {
 
 	// Check repeat rule
 	private static boolean repeateRule(List<String> symbolList) {
-		// TODO Auto-generated method stub
+		
 		if (symbolList.size() == 1) {
 			return true;
 		} else {
@@ -85,7 +85,7 @@ public class SymbolRule {
 
 	//Get product number method
 	public static int getProductNumber(List<String> symbolList) {
-		// TODO Auto-generated method stub
+		
 		int productNumber = 0;
 		for(int i=0; i<symbolList.size(); i++){
 			if(i<symbolList.size()-1 && SymbolUtil.getSymbolValue(symbolList.get(i)) < SymbolUtil
